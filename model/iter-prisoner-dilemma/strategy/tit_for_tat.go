@@ -2,30 +2,35 @@ package strategy
 
 import "github.com/chengshusss/iter-prisoner-dilemma/common"
 
-type TitForTat struct {
+type Tit struct {
 	OppoActMap map[int]common.ActEnum
 	Idx        int
 }
 
-func (t *TitForTat) Act(oppo int) common.ActEnum {
+func (t *Tit) Act(oppo int, _ int) common.ActEnum {
 	act, ok := t.OppoActMap[oppo]
 	if !ok {
-		return common.ActCooperea
+		return common.ActCooperate
 	}
 
 	return act
 }
 
-func (t *TitForTat) Update(oppoIndex int, opponentAct common.ActEnum) {
+func (t *Tit) Update(_, oppoIndex int, opponentAct common.ActEnum) {
 	t.OppoActMap[oppoIndex] = opponentAct
 }
 
-func (t *TitForTat) Index() int {
+func (t *Tit) Index() int {
 	return t.Idx
 }
 
-func NewTitForTat(idx int) *TitForTat {
-	return &TitForTat{
+func (t *Tit) Reset() {
+	n := len(t.OppoActMap)
+	t.OppoActMap = make(map[int]common.ActEnum, n)
+}
+
+func NewTitForTat(idx int, _ int) *Tit {
+	return &Tit{
 		OppoActMap: make(map[int]common.ActEnum),
 		Idx:        idx,
 	}

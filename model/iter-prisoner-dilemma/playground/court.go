@@ -3,7 +3,6 @@ package playground
 import (
 	"fmt"
 
-	"github.com/chengshusss/iter-prisoner-dilemma/strategy"
 	"github.com/chengshusss/iter-prisoner-dilemma/utils"
 )
 
@@ -14,10 +13,11 @@ type Court struct {
 	TotalRewardMap    map[string]int
 	DetailRewardMap   map[string]map[string]float64
 
-	Round int
+	MatchCount int
+	RoundCount int
 }
 
-func NewCourt(strategyNames []string, round int) *Court {
+func NewCourt(strategyNames []string, matchCount, roundCount int) *Court {
 	n := len(strategyNames)
 	c := Court{
 		StrategyNames:     make([]string, n),
@@ -25,72 +25,116 @@ func NewCourt(strategyNames []string, round int) *Court {
 		ShadowCompetitors: make([]StrategyEntry, n),
 		TotalRewardMap:    make(map[string]int, n),
 		DetailRewardMap:   make(map[string]map[string]float64, n),
-		Round:             round,
+		MatchCount:        matchCount,
+		RoundCount:        roundCount,
 	}
 
 	for i, name := range strategyNames {
-		p := getStrategyFromName(name, i)
+		p := getStrategyFromName(name, i, roundCount)
 		if p == nil {
 			panic("do not have strategy imple " + name)
 		}
 		c.StrategyNames[i] = name
 		c.Protagonists[i] = p
-		c.ShadowCompetitors[i] = getStrategyFromName(name, n*10+i)
+		c.ShadowCompetitors[i] = getStrategyFromName(name, n*10+i, roundCount)
 	}
 
 	return &c
 }
 
-func (c *Court) FullSimulate() {
+func (c *Court) simulateOnce() {
 	for i, protagonist := range c.Protagonists {
 		for j, competitor := range c.ShadowCompetitors {
 			u := NewUmpire(protagonist, competitor)
 
-			rewards := make([]int, c.Round)
-			for k := 0; k < c.Round; k++ {
-				reward, _ := u.ConductOnce()
+			rewards := make([]int, c.RoundCount)
+			for k := 0; k < c.RoundCount; k++ {
+				reward, _ := u.ConductOnce(k, c.RoundCount)
 				rewards[k] = reward
 			}
 
 			nameA := c.StrategyNames[i]
 			nameB := c.StrategyNames[j]
-			avgReward := utils.Avg(rewards)
 
 			rewardMap, ok := c.DetailRewardMap[nameA]
 			if !ok {
 				rewardMap = make(map[string]float64, len(c.StrategyNames))
 			}
-			rewardMap[nameB] = avgReward
+			rewardMap[nameB] += float64(utils.Sum(rewards))
 			c.DetailRewardMap[nameA] = rewardMap
 		}
 	}
 }
 
-func (c *Court) Output() {
+func (c *Court) reset() {
+	for _, p := range c.Protagonists {
+		p.Reset()
+	}
+
+	for _, s := range c.ShadowCompetitors {
+		s.Reset()
+	}
+}
+
+func (c *Court) FullSimulate() {
+	for range c.MatchCount {
+		c.simulateOnce()
+		c.reset()
+	}
+
+	for i := range c.Protagonists {
+		nameA := c.StrategyNames[i]
+		rewardMap, ok := c.DetailRewardMap[nameA]
+		if !ok {
+			panic(fmt.Sprintf("missing reward map for %s", nameA))
+		}
+
+		for j := range c.ShadowCompetitors {
+			nameB := c.StrategyNames[j]
+
+			rewardMap[nameB] /= float64(c.MatchCount)
+		}
+
+		c.DetailRewardMap[nameA] = rewardMap
+	}
+}
+
+func (c *Court) toDetailString() string {
+	s := "        "
+	for _, name := range c.StrategyNames {
+		s += fmt.Sprintf("%10s", name)
+	}
+	s += "\n"
+
 	for _, nameA := range c.StrategyNames {
+		s += fmt.Sprintf("%10s", nameA)
+		rewardMap, ok := c.DetailRewardMap[nameA]
+		if !ok {
+			panic(fmt.Sprintf("lack of simulation for [%s]\n", nameA))
+		}
 		for _, nameB := range c.StrategyNames {
-			rewardMap, ok := c.DetailRewardMap[nameA]
-			if !ok {
-				panic(fmt.Sprintf("lack of simulation for [%s]\n", nameA))
-			}
 			reward, ok := rewardMap[nameB]
 			if !ok {
 				panic(fmt.Sprintf("lack of simulation between [%s] and [%s]\n", nameA, nameB))
 			}
 
-			fmt.Printf("%15s vs %15s: %.2f\n", nameA, nameB, reward)
+			s += fmt.Sprintf("  %.2f  ", reward)
 		}
+		s += "\n"
 	}
+
+	return s
 }
 
-func getStrategyFromName(name string, idx int) StrategyEntry {
-	switch name {
-	case "tit_for_tat":
-		return strategy.NewTitForTat(idx)
-	case "random":
-		return strategy.NewRandom(idx)
+func (c *Court) Output() {
 
-	default:
-		return nil
+	fmt.Print(c.toDetailString())
+
+	fmt.Print("===========================================================\nAvg Reward:")
+
+	for _, nameA := range c.StrategyNames {
+		rewardMap := c.DetailRewardMap[nameA]
+		reward := utils.Avg(utils.ToSlice(rewardMap))
+		fmt.Printf(" %.2f   ", reward)
 	}
 }

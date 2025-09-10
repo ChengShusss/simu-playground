@@ -6,9 +6,15 @@ import (
 
 func main() {
 	court := playground.NewCourt([]string{
-		"tit_for_tat",
+		"tit",
+		// "tideman",
+		"nydegger",
+		"grofman",
+		"shubik",
+		"friedman",
+		"davis",
 		"random",
-	}, 200)
+	}, 50, 200)
 
 	court.FullSimulate()
 	court.Output()
