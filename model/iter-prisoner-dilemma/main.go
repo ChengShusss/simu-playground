@@ -7,10 +7,11 @@ import (
 func main() {
 	court := playground.NewCourt([]string{
 		"tit",
-		// "tideman",
+		"tideman",
 		"nydegger",
 		"grofman",
 		"shubik",
+		"stein",
 		"friedman",
 		"davis",
 		"random",

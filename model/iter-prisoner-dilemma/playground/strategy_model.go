@@ -19,8 +19,6 @@ func getStrategyFromName(name string, idx, totalRound int) StrategyEntry {
 	switch name {
 	case "tit":
 		return strategy.NewTitForTat(idx, totalRound)
-	case "random":
-		return strategy.NewRandom(idx, totalRound)
 	case "tideman":
 		return strategy.NewTideman(idx, totalRound)
 	case "nydegger":
@@ -29,10 +27,15 @@ func getStrategyFromName(name string, idx, totalRound int) StrategyEntry {
 		return strategy.NewGrofman(idx, totalRound)
 	case "shubik":
 		return strategy.NewShubik(idx, totalRound)
+	case "stein":
+		return strategy.NewStein(idx, totalRound)
 	case "friedman":
 		return strategy.NewFriedman(idx, totalRound)
 	case "davis":
 		return strategy.NewDavis(idx, totalRound)
+
+	case "random":
+		return strategy.NewRandom(idx, totalRound)
 	default:
 		return nil
 	}
