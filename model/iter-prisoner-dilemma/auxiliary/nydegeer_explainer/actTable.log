@@ -1,0 +1,65 @@
+           |---INFO---| R1  | R2  | R3  |   |---INFO---| R1  | R2  | R3  |   |---INFO---| R1  | R2  | R3  |   |---INFO---| R1  | R2  | R3  |   
+           - - - - - - - - - - - - - - -    - - - - - - - - - - - - - - -    - - - - - - - - - - - - - - -    - - - - - - - - - - - - - - -  
+Self Act   |-Round  0-|Co   |Co   |Co   |   |-Round  1-|Co   |Co   |De   |   |-Round  2-|Co   |Co   |Co   |   |-Round  3-|Co   |Co   |De   | 
+Oppo Act   |NextAct Co|   Co|   Co|   Co|   |NextAct De|   Co|   Co|   Co|   |NextAct Co|   Co|   Co|   De|   |NextAct Co|   Co|   Co|   De| 
+           - - - - - - - - - - - - - - -    - - - - - - - - - - - - - - -    - - - - - - - - - - - - - - -    - - - - - - - - - - - - - - -  
+           - - - - - - - - - - - - - - -    - - - - - - - - - - - - - - -    - - - - - - - - - - - - - - -    - - - - - - - - - - - - - - -  
+Self Act   |-Round  4-|Co   |De   |Co   |   |-Round  5-|Co   |De   |De   |   |-Round  6-|Co   |De   |Co   |   |-Round  7-|Co   |De   |De   | 
+Oppo Act   |NextAct Co|   Co|   Co|   Co|   |NextAct Co|   Co|   Co|   Co|   |NextAct De|   Co|   Co|   De|   |NextAct De|   Co|   Co|   De| 
+           - - - - - - - - - - - - - - -    - - - - - - - - - - - - - - -    - - - - - - - - - - - - - - -    - - - - - - - - - - - - - - -  
+           - - - - - - - - - - - - - - -    - - - - - - - - - - - - - - -    - - - - - - - - - - - - - - -    - - - - - - - - - - - - - - -  
+Self Act   |-Round  8-|Co   |Co   |Co   |   |-Round  9-|Co   |Co   |De   |   |-Round 10-|Co   |Co   |Co   |   |-Round 11-|Co   |Co   |De   | 
+Oppo Act   |NextAct Co|   Co|   De|   Co|   |NextAct Co|   Co|   De|   Co|   |NextAct Co|   Co|   De|   De|   |NextAct Co|   Co|   De|   De| 
+           - - - - - - - - - - - - - - -    - - - - - - - - - - - - - - -    - - - - - - - - - - - - - - -    - - - - - - - - - - - - - - -  
+           - - - - - - - - - - - - - - -    - - - - - - - - - - - - - - -    - - - - - - - - - - - - - - -    - - - - - - - - - - - - - - -  
+Self Act   |-Round 12-|Co   |De   |Co   |   |-Round 13-|Co   |De   |De   |   |-Round 14-|Co   |De   |Co   |   |-Round 15-|Co   |De   |De   | 
+Oppo Act   |NextAct Co|   Co|   De|   Co|   |NextAct Co|   Co|   De|   Co|   |NextAct Co|   Co|   De|   De|   |NextAct Co|   Co|   De|   De| 
+           - - - - - - - - - - - - - - -    - - - - - - - - - - - - - - -    - - - - - - - - - - - - - - -    - - - - - - - - - - - - - - -  
+           - - - - - - - - - - - - - - -    - - - - - - - - - - - - - - -    - - - - - - - - - - - - - - -    - - - - - - - - - - - - - - -  
+Self Act   |-Round 16-|De   |Co   |Co   |   |-Round 17-|De   |Co   |De   |   |-Round 18-|De   |Co   |Co   |   |-Round 19-|De   |Co   |De   | 
+Oppo Act   |NextAct Co|   Co|   Co|   Co|   |NextAct De|   Co|   Co|   Co|   |NextAct Co|   Co|   Co|   De|   |NextAct Co|   Co|   Co|   De| 
+           - - - - - - - - - - - - - - -    - - - - - - - - - - - - - - -    - - - - - - - - - - - - - - -    - - - - - - - - - - - - - - -  
+           - - - - - - - - - - - - - - -    - - - - - - - - - - - - - - -    - - - - - - - - - - - - - - -    - - - - - - - - - - - - - - -  
+Self Act   |-Round 20-|De   |De   |Co   |   |-Round 21-|De   |De   |De   |   |-Round 22-|De   |De   |Co   |   |-Round 23-|De   |De   |De   | 
+Oppo Act   |NextAct Co|   Co|   Co|   Co|   |NextAct Co|   Co|   Co|   Co|   |NextAct De|   Co|   Co|   De|   |NextAct De|   Co|   Co|   De| 
+           - - - - - - - - - - - - - - -    - - - - - - - - - - - - - - -    - - - - - - - - - - - - - - -    - - - - - - - - - - - - - - -  
+           - - - - - - - - - - - - - - -    - - - - - - - - - - - - - - -    - - - - - - - - - - - - - - -    - - - - - - - - - - - - - - -  
+Self Act   |-Round 24-|De   |Co   |Co   |   |-Round 25-|De   |Co   |De   |   |-Round 26-|De   |Co   |Co   |   |-Round 27-|De   |Co   |De   | 
+Oppo Act   |NextAct Co|   Co|   De|   Co|   |NextAct Co|   Co|   De|   Co|   |NextAct De|   Co|   De|   De|   |NextAct Co|   Co|   De|   De| 
+           - - - - - - - - - - - - - - -    - - - - - - - - - - - - - - -    - - - - - - - - - - - - - - -    - - - - - - - - - - - - - - -  
+           - - - - - - - - - - - - - - -    - - - - - - - - - - - - - - -    - - - - - - - - - - - - - - -    - - - - - - - - - - - - - - -  
+Self Act   |-Round 28-|De   |De   |Co   |   |-Round 29-|De   |De   |De   |   |-Round 30-|De   |De   |Co   |   |-Round 31-|De   |De   |De   | 
+Oppo Act   |NextAct Co|   Co|   De|   Co|   |NextAct De|   Co|   De|   Co|   |NextAct De|   Co|   De|   De|   |NextAct De|   Co|   De|   De| 
+           - - - - - - - - - - - - - - -    - - - - - - - - - - - - - - -    - - - - - - - - - - - - - - -    - - - - - - - - - - - - - - -  
+           - - - - - - - - - - - - - - -    - - - - - - - - - - - - - - -    - - - - - - - - - - - - - - -    - - - - - - - - - - - - - - -  
+Self Act   |-Round 32-|Co   |Co   |Co   |   |-Round 33-|Co   |Co   |De   |   |-Round 34-|Co   |Co   |Co   |   |-Round 35-|Co   |Co   |De   | 
+Oppo Act   |NextAct Co|   De|   Co|   Co|   |NextAct De|   De|   Co|   Co|   |NextAct Co|   De|   Co|   De|   |NextAct Co|   De|   Co|   De| 
+           - - - - - - - - - - - - - - -    - - - - - - - - - - - - - - -    - - - - - - - - - - - - - - -    - - - - - - - - - - - - - - -  
+           - - - - - - - - - - - - - - -    - - - - - - - - - - - - - - -    - - - - - - - - - - - - - - -    - - - - - - - - - - - - - - -  
+Self Act   |-Round 36-|Co   |De   |Co   |   |-Round 37-|Co   |De   |De   |   |-Round 38-|Co   |De   |Co   |   |-Round 39-|Co   |De   |De   | 
+Oppo Act   |NextAct Co|   De|   Co|   Co|   |NextAct Co|   De|   Co|   Co|   |NextAct De|   De|   Co|   De|   |NextAct De|   De|   Co|   De| 
+           - - - - - - - - - - - - - - -    - - - - - - - - - - - - - - -    - - - - - - - - - - - - - - -    - - - - - - - - - - - - - - -  
+           - - - - - - - - - - - - - - -    - - - - - - - - - - - - - - -    - - - - - - - - - - - - - - -    - - - - - - - - - - - - - - -  
+Self Act   |-Round 40-|Co   |Co   |Co   |   |-Round 41-|Co   |Co   |De   |   |-Round 42-|Co   |Co   |Co   |   |-Round 43-|Co   |Co   |De   | 
+Oppo Act   |NextAct Co|   De|   De|   Co|   |NextAct Co|   De|   De|   Co|   |NextAct Co|   De|   De|   De|   |NextAct Co|   De|   De|   De| 
+           - - - - - - - - - - - - - - -    - - - - - - - - - - - - - - -    - - - - - - - - - - - - - - -    - - - - - - - - - - - - - - -  
+           - - - - - - - - - - - - - - -    - - - - - - - - - - - - - - -    - - - - - - - - - - - - - - -    - - - - - - - - - - - - - - -  
+Self Act   |-Round 44-|Co   |De   |Co   |   |-Round 45-|Co   |De   |De   |   |-Round 46-|Co   |De   |Co   |   |-Round 47-|Co   |De   |De   | 
+Oppo Act   |NextAct Co|   De|   De|   Co|   |NextAct De|   De|   De|   Co|   |NextAct Co|   De|   De|   De|   |NextAct Co|   De|   De|   De| 
+           - - - - - - - - - - - - - - -    - - - - - - - - - - - - - - -    - - - - - - - - - - - - - - -    - - - - - - - - - - - - - - -  
+           - - - - - - - - - - - - - - -    - - - - - - - - - - - - - - -    - - - - - - - - - - - - - - -    - - - - - - - - - - - - - - -  
+Self Act   |-Round 48-|De   |Co   |Co   |   |-Round 49-|De   |Co   |De   |   |-Round 50-|De   |Co   |Co   |   |-Round 51-|De   |Co   |De   | 
+Oppo Act   |NextAct Co|   De|   Co|   Co|   |NextAct De|   De|   Co|   Co|   |NextAct Co|   De|   Co|   De|   |NextAct Co|   De|   Co|   De| 
+           - - - - - - - - - - - - - - -    - - - - - - - - - - - - - - -    - - - - - - - - - - - - - - -    - - - - - - - - - - - - - - -  
+           - - - - - - - - - - - - - - -    - - - - - - - - - - - - - - -    - - - - - - - - - - - - - - -    - - - - - - - - - - - - - - -  
+Self Act   |-Round 52-|De   |De   |Co   |   |-Round 53-|De   |De   |De   |   |-Round 54-|De   |De   |Co   |   |-Round 55-|De   |De   |De   | 
+Oppo Act   |NextAct Co|   De|   Co|   Co|   |NextAct Co|   De|   Co|   Co|   |NextAct De|   De|   Co|   De|   |NextAct De|   De|   Co|   De| 
+           - - - - - - - - - - - - - - -    - - - - - - - - - - - - - - -    - - - - - - - - - - - - - - -    - - - - - - - - - - - - - - -  
+           - - - - - - - - - - - - - - -    - - - - - - - - - - - - - - -    - - - - - - - - - - - - - - -    - - - - - - - - - - - - - - -  
+Self Act   |-Round 56-|De   |Co   |Co   |   |-Round 57-|De   |Co   |De   |   |-Round 58-|De   |Co   |Co   |   |-Round 59-|De   |Co   |De   | 
+Oppo Act   |NextAct Co|   De|   De|   Co|   |NextAct Co|   De|   De|   Co|   |NextAct De|   De|   De|   De|   |NextAct Co|   De|   De|   De| 
+           - - - - - - - - - - - - - - -    - - - - - - - - - - - - - - -    - - - - - - - - - - - - - - -    - - - - - - - - - - - - - - -  
+           - - - - - - - - - - - - - - -    - - - - - - - - - - - - - - -    - - - - - - - - - - - - - - -    - - - - - - - - - - - - - - -  
+Self Act   |-Round 60-|De   |De   |Co   |   |-Round 61-|De   |De   |De   |   |-Round 62-|De   |De   |Co   |   |-Round 63-|De   |De   |De   | 
+Oppo Act   |NextAct Co|   De|   De|   Co|   |NextAct De|   De|   De|   Co|   |NextAct Co|   De|   De|   De|   |NextAct Co|   De|   De|   De| 
+           - - - - - - - - - - - - - - -    - - - - - - - - - - - - - - -    - - - - - - - - - - - - - - -    - - - - - - - - - - - - - - -  
